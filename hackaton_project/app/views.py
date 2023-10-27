@@ -18,7 +18,7 @@ def search_crimes(request):
     "messages": [
         {
             "role": "system",
-            "content": f"En django tengo un modelo 'Crime', usando esto: Crime.objects.filter(), dame lo que iría en los paréntesis de la función en base a esta búsqueda: {query}, la tabla tiene los campos: id, Año, Clave_Ent, Entidad, Bien_juridico_afectado, Tipo_de_delito, Subtipo_de_delito, Modalidad, Enero, Febrero, Marzo, Abril, Mayo, Junio, Agosto, Septiembre, Octubre, Noviembre, Diciembre. Mandame unicamente lo que va en el parentesis, no mandes ninguna explicacion de ningun tipo ni nada, ya que la respuesta que mandes sera usada en codigo"
+            "content": f"En django tengo un modelo 'Crimes', usando esto: Crimes.objects.filter(), dame la función con los parentesis rellenados en base a esta búsqueda: {query}, la tabla tiene los campos: id, Año, Clave_Ent, Entidad, Bien_juridico_afectado, Tipo_de_delito, Subtipo_de_delito, Modalidad, Enero, Febrero, Marzo, Abril, Mayo, Junio, Agosto, Septiembre, Octubre, Noviembre, Diciembre. Los campos de 'Enero' a 'Diciembre' indican el numero de delitos ocurridos en ese mes. Mandame unicamente lo que iria en el parentesis de la funcion, no mandes ninguna explicacion, ya que la respuesta que mandes sera usada en codigo"
         },
         {
             "role": "user",
@@ -28,8 +28,12 @@ def search_crimes(request):
     }
 
     response = requests.post(openai_url, headers=headers, json=data)
-    print(response.json())
    
-    #results = Crime.objects.raw(sql_query)
-    results = Crime.objects.all()
-    return render(request, 'app/search.html', {'results': results})
+    results = response.json()['choices'][0]['message']['content']
+    print(results)
+    queryCode = None  # Inicializa la variable
+    try:
+        exec("queryCode = " + results)
+    except Exception as e:
+        print(f"Error al ejecutar el código: {e}")
+    return render(request, 'app/search.html', {'query': queryCode})

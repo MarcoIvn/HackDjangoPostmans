@@ -1,6 +1,6 @@
 from django.db import models
 
-class Crime(models.Model):
+class Crimes(models.Model):
     ID = models.AutoField(primary_key=True)
     Año = models.IntegerField()
     Clave_Ent = models.CharField(max_length=4)
