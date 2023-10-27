@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de la búsqueda</title>
+</head>
+<body>
+    <h1>Resultados de la búsqueda</h1>
+
+    <form method="get" action="{% url 'search' %}">
+        <input type="text" name="query" placeholder="Escribe tu consulta en lenguaje natural">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <ul>
+        {% for crime in results %}
+            <li>{{ crime }}</li>
+        {% empty %}
+            <li>No se encontraron resultados</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
