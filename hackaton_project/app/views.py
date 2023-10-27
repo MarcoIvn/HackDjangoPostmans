@@ -18,7 +18,7 @@ def search_crimes(request):
     "messages": [
         {
             "role": "system",
-            "content": f"En django tengo un modelo 'Crimes', usando esto: Crimes.objects.filter(), dame la función con los parentesis rellenados en base a esta búsqueda: {query}, la tabla tiene los campos: id, Año, Clave_Ent, Entidad, Bien_juridico_afectado, Tipo_de_delito, Subtipo_de_delito, Modalidad, Enero, Febrero, Marzo, Abril, Mayo, Junio, Agosto, Septiembre, Octubre, Noviembre, Diciembre. Los campos de 'Enero' a 'Diciembre' indican el numero de delitos ocurridos en ese mes. Mandame unicamente lo que iria en el parentesis de la funcion, no mandes ninguna explicacion, ya que la respuesta que mandes sera usada en codigo"
+            "content": f"En django tengo un modelo 'Crimes', usando esto: Crimes.objects.filter(), dame la función con los parentesis rellenados en base a esta búsqueda: {query}, la tabla tiene los campos: id, Año, Clave_Ent, Entidad, Bien_juridico_afectado, Tipo_de_delito, Subtipo_de_delito, Modalidad, Enero, Febrero, Marzo, Abril, Mayo, Junio, Agosto, Septiembre, Octubre, Noviembre, Diciembre. Los campos de 'Enero' a 'Diciembre' indican el numero de delitos ocurridos en ese mes. Mandame unicamente lo que iria en el parentesis de la funcion, no mandes ninguna explicacion, ya que la respuesta que mandes sera usada en código. Además, cualquier string debe iniciar con mayúscula."
         },
         {
             "role": "user",
@@ -31,9 +31,10 @@ def search_crimes(request):
    
     results = response.json()['choices'][0]['message']['content']
     print(results)
-    queryCode = None  # Inicializa la variable
+
+    queryCode = None 
     try:
-        exec("queryCode = " + results)
+        queryCode = eval(results)
     except Exception as e:
         print(f"Error al ejecutar el código: {e}")
     return render(request, 'app/search.html', {'query': queryCode})
