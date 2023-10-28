@@ -12,7 +12,7 @@ var myChart = new Chart(ctx, {
   data: {
     labels: ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
     datasets: [{
-      label: "Mes",
+      label: "Crímenes",
       backgroundColor: "rgba(90,34,139,1)",
       borderColor:  "rgba(90,34,139,1)",
       data: datos

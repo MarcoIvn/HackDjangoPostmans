@@ -3,14 +3,63 @@
 <div class="container">
     <h2>{{query}}</h1>
 
-      <div class="col-xl-8">
-        <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-chart-area me-1"></i>
-                Gráfica 
+        <div style="font-size: smaller;">
+            <table>
+                <thead>
+                    <th>Año</th>
+                    <th>Entidad</th>
+                    <th>Bienafectado</th>
+                    <th>Tipo</th>
+                    <th>Subtipo</th>
+                    <th>Modalidad</th>
+                    <th>ENE</th>
+                    <th>FEB</th>
+                    <th>MAR</th>
+                    <th>ABR</th>
+                    <th>MAY</th>
+                    <th>JUN</th>
+                    <th>JUL</th>
+                    <th>AGO</th>
+                    <th>SEP</th>
+                    <th>OCT</th>
+                    <th>NOV</th>
+                    <th>DEC</th>
+                </thead>
+                <tbody>
+                    <td>{{query.Año}}</td>
+                    <td>{{query.Entidad}}</td>
+                    <td>{{query.Bien_juridico_afectado}}</td>
+                    <td>{{query.Tipo_de_delito}}</td>
+                    <td>{{query.Subtipo_de_delito}}</td>
+                    <td>{{query.Modalidad}}</td>
+                    <td>{{query.Enero}}</td>
+                    <td>{{query.Febrero}}</td>
+                    <td>{{query.Marzo}}</td>
+                    <td>{{query.Abril}}</td>
+                    <td>{{query.Mayo}}</td>
+                    <td>{{query.Junio}}</td>
+                    <td>{{query.Julio}}</td>
+                    <td>{{query.Agosto}}</td>
+                    <td>{{query.Septiembre}}</td>
+                    <td>{{query.Octubre}}</td>
+                    <td>{{query.Noviembre}}</td>
+                    <td>{{query.Diciembre}}</td>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div class="container">
+            <h1>Definición de {{query.Tipo_de_delito}}, {{query.Subtipo_de_delito}}</h1>
+            {{text}}
+        </div>
+        <div class="container-light">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    {{query}}
+                </div>
+                <div class="card-body"><canvas id="totalesChart" data-data="{{data}}"></canvas></div>
             </div>
-            <div class="card-body"><canvas id="totalesChart" width="400%" data-data="{{data}}"></canvas></div>
-          </div>
-    </div>
-</div>
-{% endblock %}
+
+        </div>
+        {% endblock %}
