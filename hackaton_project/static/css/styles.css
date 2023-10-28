@@ -1,0 +1,101 @@
+body {
+    background-image: url('../IMGS/backg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra suave al contenedor */
+}
+
+h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 20px;
+    display: flex; /* Hace que los elementos del formulario estén en línea */
+    align-items: center; /* Centra verticalmente los elementos del formulario */
+}
+
+input[type="text"] {
+    flex: 1; /* El campo de búsqueda ocupa todo el espacio disponible */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none; /* Elimina el contorno al hacer clic en el campo */
+}
+
+input[type="submit"] {
+    background-color: #e74c3c; /* Cambia el color de fondo del botón a rojo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px; /* Agrega un espacio entre el campo y el botón */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Agrega una transición suave al color de fondo */
+}
+
+input[type="submit"]:hover {
+    background-color: #c0392b; /* Cambia el color de fondo al pasar el mouse por encima */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #444;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+
+.info-button {
+    background-color: #007BFF; /* Color de fondo para el botón de información */
+    color: #fff;
+    border: none;
+    border-radius: 50%; /* Hace que el botón sea circular */
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.info-button:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse por encima */
+}
