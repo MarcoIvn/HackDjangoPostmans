@@ -41,7 +41,7 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-    background-color: #e74c3c; /* Cambia el color de fondo del botón a rojo */
+    background-color: #0a1e9f; /* Cambia el color de fondo del botón a rojo */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -52,7 +52,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #c0392b; /* Cambia el color de fondo al pasar el mouse por encima */
+    background-color: #2970ea; /* Cambia el color de fondo al pasar el mouse por encima */
 }
 
 table {
@@ -98,4 +98,38 @@ li {
 
 .info-button:hover {
     background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse por encima */
+}
+
+/* Define a CSS class for the button */
+.btn {
+    background-color: #0a1e9f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Remove underline for anchor links */
+    display: inline-block; /* Make it an inline block element */
+}
+
+.btn:hover {
+    background-color: #2970ea;
+}
+
+/* Define a custom CSS class for the <a> tag */
+.custom-link {
+    color: #0077b6; /* Change text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Apply bold font weight */
+    padding: 2px 4px; /* Add some padding */
+    background-color: #f3f3f3; /* Set a background color */
+    border: 1px solid #0077b6; /* Add a border */
+    border-radius: 2px; /* Apply rounded corners */
+}
+
+.custom-link:hover {
+    background-color: #0077b6; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
 }

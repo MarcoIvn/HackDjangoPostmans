@@ -1,0 +1,22 @@
+{% extends "app/base.html"%}
+{% block content %}
+<div class="container">
+        <h1>Buscar en la base de datos</h1>
+        <h3>Sobre este sitio</h2>
+        <p style="text-align: justify;">
+            La inseguridad es un problema muy grande en México. Por lo mismo, es un problema 
+            digno de ser estudiado. Esta herramienta nos permite realizar búsquedas
+            en una base de datos en lenguaje natural sobre los distintos crímenes registrados
+            en la República Mexicana.</p>
+        <h3>Recursos utilizados</h3>
+        <p style="text-align: justify;">Utilizamos los siguientes
+            <a class="custom-link" href="https://www.kaggle.com/datasets/linigoga/crime-in-mexico-data">datos</a>
+            como base para este reto. Además utilizamos la API de 
+        <a class="custom-link" href="https://chat.openai.com/">ChatGPT</a> para procesar las solicitudes.</p>
+        <h3>Instrucciones</h3>
+        <p style="text-align: justify;">Ingresar una búsqueda en el cuadro de texto y dar clic en botón de Buscar. 
+            Es posible que la request no sea exitosa en una primera instancia; en tal caso, 
+            se aconseja introducir una búsqueda similar. </p>
+        <a href="{% url 'search' %}" class="btn" role="button" aria-pressed="true">Ir a la búsqueda</a>
+</div>
+{% endblock %}

@@ -1,39 +1,32 @@
-<!DOCTYPE html>
-{% load static %}
-<html>
-<head>
-    <title>Resultados de la búsqueda</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <div class="container">
-        <h1>Resultados de la búsqueda</h1>
+{% extends "app/base.html"%}
+{% block content %}
+<div class="container">
+    <h1>Resultados de la búsqueda</h1>
 
-        <form method="get" action="{% url 'search' %}">
-            <input type="text" name="query" placeholder="Escribe tu consulta en lenguaje natural">
-            <input type="submit" value="Buscar">
-        </form>
+    <form method="get" action="{% url 'search' %}">
+        <input type="text" name="query" placeholder="Escribe tu consulta en lenguaje natural">
+        <input type="submit" value="Buscar">
+    </form>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Resultado</th>
-                    <th>Información</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for crime in query %}
-                <tr>
-                    <td>{{ crime }}</td>
-                    <td><button class="info-button">i</button></td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="2">No se encontraron resultados</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+    <table>
+        <thead>
+            <tr>
+                <th>Resultado</th>
+                <th>Información</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for crime in query %}
+            <tr>
+                <td>{{ crime }}</td>
+                <td><button class="info-button">i</button></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">Algo salió mal... Intenta de nuevo.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
