@@ -16,7 +16,7 @@ def search_crimes(request):
         openai_url = "https://api.openai.com/v1/chat/completions"
         headers = {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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",
+            "Authorization": "Bearer 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",
         }
         # Datos de la solicitud
         data = {
@@ -56,7 +56,7 @@ def search_one(request, ID):
     openai_url = "https://api.openai.com/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer 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",
     }
     # Datos de la solicitud
     data = {

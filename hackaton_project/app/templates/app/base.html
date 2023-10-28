@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>K’ebán</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <script type="text/javascript" src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <script type = "text/javascript" src="{% static 'js/chart-crimes-bar.js' %}"></script>  
+    <script type="text/javascript" src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/chart-crimes-bar.js' %}"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="container" ><img src="{% static 'IMGS/logo.png' %}" style="height: 50px;" alt="K'ebán Logo"> </div>
-    
+    <div class="container"><a href="{% url 'search' %}"><img src="{% static 'IMGS/logo.png' %}" style="height: 50px;"
+                alt="K'ebán Logo"></a></div>
     <br>
     {% block content %} {% endblock %}
-    
+
     <script src="js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script type = "text/javascript" src="{% static 'js/chart-crimes-bar.js' %}" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/chart-crimes-bar.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
+
 </html>
