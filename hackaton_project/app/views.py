@@ -9,6 +9,7 @@ def home(request):
     return render(request, 'app/home.html')
 
 def search_crimes(request):
+    
     if request.GET.get('query', '') != '':
         query = request.GET.get('query', '') 
         openai_url = "https://api.openai.com/v1/chat/completions"
@@ -40,6 +41,8 @@ def search_crimes(request):
             queryCode = eval(results)
         except Exception as e:
             print(f"Error al ejecutar el código: {e}")
-        return render(request, 'app/search.html', {'query': queryCode})
+            return render(request, 'app/search.html', {'query': queryCode, 'results':results,'errors': e})
+        return render(request, 'app/search.html', {'query': queryCode, 'results':results})
     else:
         return render(request, 'app/search.html')
+    

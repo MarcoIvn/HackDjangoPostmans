@@ -24,5 +24,8 @@ class Crimes(models.Model):
     Sexo_Averiguacion_previa = models.CharField(max_length=255)
     Rango_de_edad = models.CharField(max_length=255)
 
+    def get_total(self):
+        return self.Enero + self.Febrero + self.Marzo + self.Abril + self.Mayo + self.Junio + self.Julio + self.Agosto + self.Septiembre + self.Octubre + self.Noviembre + self.Diciembre
+    
     def __str__(self):
-        return f"{self.Año} - {self.Entidad} - {self.Tipo_de_delito}"
+        return f"{self.Año} - {self.Entidad} - {self.Tipo_de_delito} - {self.Modalidad}: {self.get_total()}"
