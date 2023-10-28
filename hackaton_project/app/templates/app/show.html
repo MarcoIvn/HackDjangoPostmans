@@ -1,32 +1,10 @@
 {% extends "app/base.html"%}
 {% block content %}
 <div class="container">
-    <h1>Buscar</h1>
+    <h2>{{query}}</h1>
 
-    <form method="get" action="{% url 'search' %}">
-        <input type="text" name="query" placeholder="Escribe tu consulta en lenguaje natural">
-        <input type="submit" value="Buscar">
-    </form>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Resultado</th>
-                <th>Información</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for crime in query %}
-            <tr>
-                <td>{{ crime }}</td>
-                <td><button class="info-button">i</button></td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="2">Algo salió mal... Intenta de nuevo.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        <canvas id="totalesChart" data-data="{{data}}"></canvas>
+    </div>
 </div>
 {% endblock %}

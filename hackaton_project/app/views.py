@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render
 from app.models import *
 import openai
@@ -46,3 +47,8 @@ def search_crimes(request):
     else:
         return render(request, 'app/search.html')
     
+def search_one(request, ID):
+    q = Crimes.objects.get(ID=ID)
+    data = q.get_monthly_values()
+    ctx = {"query": q, 'data':json.dumps(data)}
+    return render(request, 'app/show.html', ctx)

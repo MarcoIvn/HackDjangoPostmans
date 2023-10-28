@@ -27,5 +27,16 @@ class Crimes(models.Model):
     def get_total(self):
         return self.Enero + self.Febrero + self.Marzo + self.Abril + self.Mayo + self.Junio + self.Julio + self.Agosto + self.Septiembre + self.Octubre + self.Noviembre + self.Diciembre
     
+    def get_monthly_values(self):
+        # Create an array to store the values of the months
+        monthly_values = [
+            self.Enero, self.Febrero, self.Marzo,
+            self.Abril, self.Mayo, self.Junio,
+            self.Julio, self.Agosto, self.Septiembre,
+            self.Octubre, self.Noviembre, self.Diciembre
+        ]
+
+        return monthly_values
+    
     def __str__(self):
         return f"{self.Año} - {self.Entidad} - {self.Tipo_de_delito} - {self.Modalidad}: {self.get_total()}"
