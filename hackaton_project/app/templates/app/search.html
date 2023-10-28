@@ -24,7 +24,7 @@
             {% for crime in query %}
             <tr>
                 <td style="text-align: left;">{{ crime }}</td>
-                <td><button class="info-button"><a href="{% url 'one' crime.ID %}" class="info-button" role="button" aria-pressed="true">i</a></button></td>
+                <td><button class="info-button"><a href="{% url 'search_one' crime.ID %}" class="info-button" role="button" aria-pressed="true">i</a></button></td>
             </tr>
             {% empty %}
             <tr>

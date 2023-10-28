@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('search/', views.search_crimes, name="search"),
-    path('search/<int:ID>', views.search_one, name="one")
+    path('search/<int:ID>', views.search_one, name="search_one")
 ]

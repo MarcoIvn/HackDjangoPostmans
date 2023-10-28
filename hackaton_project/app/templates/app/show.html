@@ -3,8 +3,14 @@
 <div class="container">
     <h2>{{query}}</h1>
 
-    <div class="container">
-        <canvas id="totalesChart" data-data="{{data}}"></canvas>
+      <div class="col-xl-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-chart-area me-1"></i>
+                Gráfica 
+            </div>
+            <div class="card-body"><canvas id="totalesChart" width="400%" data-data="{{data}}"></canvas></div>
+          </div>
     </div>
 </div>
 {% endblock %}
